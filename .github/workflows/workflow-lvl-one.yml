@@ -1,7 +1,6 @@
 name: 'PGATS - Continuous Integration - Level 1'
 on:
   workflow_dispatch: 
-
 jobs:
   # job detailing
   tests:
@@ -11,25 +10,20 @@ jobs:
     steps: 
       # fetches the target repository
       - uses: actions/checkout@v4
-
       # installing yarn by command line
       - name: Yarn install
         run: npm install -g yarn
-
       # installing dependencies by command line
       - name: Dependencies install
         run: yarn
-
       # installing Playwright dependency by command line
       - name: Playwright install
         run: yarn playwright install
-
       # running e2e tests by command line
       - name: Running e2e tests
         run: yarn run e2e
-
       # uploads the e2e test report
       - uses: actions/upload-artifact@v4
         with: 
           name: Test report
-          path: ./playwright-report 
+          path: ./playwright-report
