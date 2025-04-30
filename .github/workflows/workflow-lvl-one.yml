@@ -24,7 +24,7 @@ jobs:
         run: yarn run e2e
       # uploads the e2e test report
       - uses: actions/upload-artifact@v4
+        if: ${{ !success() && !cancelled() }}
         with: 
           name: Test report
-          if: ${{ !success() && !cancelled() }}
           path: ./playwright-report
