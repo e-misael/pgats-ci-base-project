@@ -27,3 +27,9 @@ jobs:
       # running e2e tests by command line
       - name: Running e2e tests
         run: yarn run e2e
+
+      # uploads the e2e test report
+      - uses: actions/upload-artifact@v4
+        with: 
+          name: Test report
+          path: ./playwright-report 
