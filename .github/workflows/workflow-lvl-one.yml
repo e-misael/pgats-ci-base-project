@@ -9,21 +9,21 @@ jobs:
     runs-on: ['ubuntu-latest']
     # action step-by-step
     steps: 
-    # fetches the target repository
-    - uses: actions/checkout@v4
+      # fetches the target repository
+      - uses: actions/checkout@v4
 
-    # installing yarn by command line
-    - name: Yarn install
-      run: npm install -g yarn
+      # installing yarn by command line
+      - name: Yarn install
+        run: npm install -g yarn
 
-    # installing dependencies by command line
-    - name: Dependencies install
-      run: yarn
+      # installing dependencies by command line
+      - name: Dependencies install
+        run: yarn
 
-    # installing Playwright dependency by command line
-    - name: Playwright install
-      run: yarn playwright install
+      # installing Playwright dependency by command line
+      - name: Playwright install
+        run: yarn playwright install
 
-    # running e2e tests by command line
-    - name: Running e2e tests
-      run: yarn run e2e
+      # running e2e tests by command line
+      - name: Running e2e tests
+        run: yarn run e2e
